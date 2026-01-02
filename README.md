@@ -1,20 +1,64 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Chat Log Cleaner & Tokenizer
 
-# Run and deploy your AI Studio app
+A secure, client-side utility designed to parse, clean, and format raw social media chat exports (JSON) into token-efficient text suitable for Large Language Models (LLMs).
 
-This contains everything you need to run your app locally.
+## 🔒 Privacy First
 
-View your app in AI Studio: https://ai.studio/apps/drive/1LepxW9mVFZnl9ZzeoILx4elmYjNpfkkp
+**100% Local Processing**: This application runs entirely in your browser using JavaScript. 
+- No data is ever uploaded to any server.
+- All parsing, regex matching, and cleaning happens in your device's memory.
+- You can disconnect from the internet while using this tool for extra security.
 
-## Run Locally
+## ✨ Features
 
-**Prerequisites:**  Node.js
+- **Format Parsing**: Handles standard JSON chat structures (compatible with common WeChat/Social export tools).
+- **Smart Redaction**:
+  - **Auto-Anonymization**: Replaces real names with generic aliases (User A, User B).
+  - **Sensitive Data Masking**: Automatically detects and masks phone numbers, emails, and URLs.
+  - **Chinese Name Detection**: Built-in logic with a database of 300+ surnames to identify and redact Chinese names while preserving common words.
+  - **Custom Keywords**: A dedicated field to manually input specific names, places, or terms to scrub.
+- **Token Optimization**:
+  - Removes redundant timestamps to save context.
+  - Merges consecutive messages from the same sender.
+  - Simplifies system messages (e.g., "recalled a message") and media placeholders.
 
+## 🚀 How to Run Locally
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+This is a standard React application. You can download the source code and run it on your own machine.
+
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
+
+### Installation
+
+1. Create a new directory and extract the project files.
+2. Open your terminal in the project folder.
+3. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+### Running the App
+
+Start the local development server:
+
+```bash
+npm run dev
+```
+
+Open your browser to the local URL provided (usually `http://localhost:5173`).
+
+## 🛠 Usage Guide
+
+1. **Export Data**: Obtain your chat history in JSON format.
+2. **Import**: Click "Import Data" in the app or drag and drop your JSON file.
+3. **Configure**:
+   - **Anonymize Users**: Essential for privacy.
+   - **Mask Sensitive**: specific regex for phones/IDs.
+   - **Custom List**: If a specific name is missed, add it to the custom list text area.
+4. **Export**: Copy the result to your clipboard or download as `.txt` to send to your LLM.
+
+## 📝 License
+
+Open Source / MIT
