@@ -72,11 +72,22 @@ const App: React.FC = () => {
 
   return (
     <div className="min-h-screen p-6 md:p-12 flex flex-col gap-6 max-w-6xl mx-auto">
-      <header className="mb-4">
-        <h1 className="text-3xl font-bold text-indigo-700">Chat Log Cleaner (LLM Ready)</h1>
-        <p className="text-gray-600 mt-2">
-          Upload your WeChat/Social JSON export to strip noise (XML, IDs, Metadata) and format it for AI processing.
-        </p>
+      <header className="mb-8">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <h1 className="text-3xl font-bold text-indigo-700 tracking-tight">Chat Log Cleaner</h1>
+            <p className="text-gray-500 mt-2 text-sm max-w-xl">
+              Clean WeChat/Social exports for LLM processing. 
+              <span className="font-medium text-indigo-600"> Token-optimized & Privacy-focused.</span>
+            </p>
+          </div>
+          <div className="flex items-center gap-2 bg-green-50 text-green-700 px-4 py-2 rounded-full border border-green-100 shadow-sm self-start md:self-center">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+            </svg>
+            <span className="text-xs font-semibold">100% Local Processing</span>
+          </div>
+        </div>
       </header>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
