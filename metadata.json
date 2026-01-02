@@ -1,0 +1,5 @@
+{
+  "name": "Chat Log Cleaner & Tokenizer",
+  "description": "A utility to parse, clean, and convert raw JSON chat exports (WeChat format) into token-efficient plain text for LLM processing. Features privacy masking and noise removal.",
+  "requestFramePermissions": []
+}
